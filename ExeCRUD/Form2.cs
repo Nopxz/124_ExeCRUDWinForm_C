@@ -24,6 +24,8 @@ namespace ExeCRUD
 
         private void Form2_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'daftarmenuuDataSet.Minuman' table. You can move, or remove it, as needed.
+            this.minumanTableAdapter1.Fill(this.daftarmenuuDataSet.Minuman);
             // TODO: This line of code loads data into the 'daftarmenuDataSet1.Minuman' table. You can move, or remove it, as needed.
             this.minumanTableAdapter.Fill(this.daftarmenuDataSet1.Minuman);
             // TODO: This line of code loads data into the 'daftarmenuDataSet.Minuman' table. You can move, or remove it, as needed.

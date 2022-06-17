@@ -42,25 +42,35 @@ namespace ExeCRUD
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.idMakananDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.makananBeratDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.makananRinganDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.snackDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.makananBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.daftarmenuuDataSet = new ExeCRUD.daftarmenuuDataSet();
             this.label5 = new System.Windows.Forms.Label();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.daftarmenuDataSet = new ExeCRUD.daftarmenuDataSet();
             this.makananBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.makananTableAdapter = new ExeCRUD.daftarmenuDataSetTableAdapters.MakananTableAdapter();
-            this.idMakananDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.makananBeratDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.makananRinganDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.snackDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.daftarmenuuDataSet = new ExeCRUD.daftarmenuuDataSet();
-            this.makananBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.makananTableAdapter1 = new ExeCRUD.daftarmenuuDataSetTableAdapters.MakananTableAdapter();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.makananBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.makananBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
+            this.makananBindingSource4 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.makananBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.daftarmenuuDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.daftarmenuDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.makananBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.daftarmenuuDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.makananBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.makananBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.makananBindingSource3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.makananBindingSource4)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -93,6 +103,7 @@ namespace ExeCRUD
             // 
             // textBox1
             // 
+            this.textBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.makananBindingSource3, "Snack", true));
             this.textBox1.Location = new System.Drawing.Point(232, 274);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(163, 22);
@@ -100,13 +111,16 @@ namespace ExeCRUD
             // 
             // textBox2
             // 
+            this.textBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.makananBindingSource3, "Makanan_Ringan", true));
             this.textBox2.Location = new System.Drawing.Point(232, 169);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(163, 22);
             this.textBox2.TabIndex = 4;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // textBox3
             // 
+            this.textBox3.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.makananBindingSource3, "Makanan_Berat", true));
             this.textBox3.Location = new System.Drawing.Point(232, 223);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(163, 22);
@@ -114,7 +128,7 @@ namespace ExeCRUD
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(87, 338);
+            this.button1.Location = new System.Drawing.Point(76, 365);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 6;
@@ -124,7 +138,7 @@ namespace ExeCRUD
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(186, 380);
+            this.button2.Location = new System.Drawing.Point(186, 402);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 7;
@@ -133,7 +147,7 @@ namespace ExeCRUD
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(186, 338);
+            this.button3.Location = new System.Drawing.Point(186, 365);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 8;
@@ -142,7 +156,7 @@ namespace ExeCRUD
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(285, 338);
+            this.button4.Location = new System.Drawing.Point(285, 365);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 23);
             this.button4.TabIndex = 9;
@@ -158,14 +172,56 @@ namespace ExeCRUD
             this.makananBeratDataGridViewTextBoxColumn,
             this.makananRinganDataGridViewTextBoxColumn,
             this.snackDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.makananBindingSource1;
-            this.dataGridView1.Location = new System.Drawing.Point(411, 169);
+            this.dataGridView1.DataSource = this.makananBindingSource4;
+            this.dataGridView1.Location = new System.Drawing.Point(495, 169);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(387, 201);
+            this.dataGridView1.Size = new System.Drawing.Size(554, 201);
             this.dataGridView1.TabIndex = 10;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // idMakananDataGridViewTextBoxColumn
+            // 
+            this.idMakananDataGridViewTextBoxColumn.DataPropertyName = "Id_Makanan";
+            this.idMakananDataGridViewTextBoxColumn.HeaderText = "Id_Makanan";
+            this.idMakananDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.idMakananDataGridViewTextBoxColumn.Name = "idMakananDataGridViewTextBoxColumn";
+            this.idMakananDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // makananBeratDataGridViewTextBoxColumn
+            // 
+            this.makananBeratDataGridViewTextBoxColumn.DataPropertyName = "Makanan_Berat";
+            this.makananBeratDataGridViewTextBoxColumn.HeaderText = "Makanan_Berat";
+            this.makananBeratDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.makananBeratDataGridViewTextBoxColumn.Name = "makananBeratDataGridViewTextBoxColumn";
+            this.makananBeratDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // makananRinganDataGridViewTextBoxColumn
+            // 
+            this.makananRinganDataGridViewTextBoxColumn.DataPropertyName = "Makanan_Ringan";
+            this.makananRinganDataGridViewTextBoxColumn.HeaderText = "Makanan_Ringan";
+            this.makananRinganDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.makananRinganDataGridViewTextBoxColumn.Name = "makananRinganDataGridViewTextBoxColumn";
+            this.makananRinganDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // snackDataGridViewTextBoxColumn
+            // 
+            this.snackDataGridViewTextBoxColumn.DataPropertyName = "Snack";
+            this.snackDataGridViewTextBoxColumn.HeaderText = "Snack";
+            this.snackDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.snackDataGridViewTextBoxColumn.Name = "snackDataGridViewTextBoxColumn";
+            this.snackDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // makananBindingSource1
+            // 
+            this.makananBindingSource1.DataMember = "Makanan";
+            this.makananBindingSource1.DataSource = this.daftarmenuuDataSet;
+            // 
+            // daftarmenuuDataSet
+            // 
+            this.daftarmenuuDataSet.DataSetName = "daftarmenuuDataSet";
+            this.daftarmenuuDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label5
             // 
@@ -208,58 +264,74 @@ namespace ExeCRUD
             // 
             this.makananTableAdapter.ClearBeforeFill = true;
             // 
-            // idMakananDataGridViewTextBoxColumn
-            // 
-            this.idMakananDataGridViewTextBoxColumn.DataPropertyName = "Id_Makanan";
-            this.idMakananDataGridViewTextBoxColumn.HeaderText = "Id_Makanan";
-            this.idMakananDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.idMakananDataGridViewTextBoxColumn.Name = "idMakananDataGridViewTextBoxColumn";
-            this.idMakananDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // makananBeratDataGridViewTextBoxColumn
-            // 
-            this.makananBeratDataGridViewTextBoxColumn.DataPropertyName = "Makanan_Berat";
-            this.makananBeratDataGridViewTextBoxColumn.HeaderText = "Makanan_Berat";
-            this.makananBeratDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.makananBeratDataGridViewTextBoxColumn.Name = "makananBeratDataGridViewTextBoxColumn";
-            this.makananBeratDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // makananRinganDataGridViewTextBoxColumn
-            // 
-            this.makananRinganDataGridViewTextBoxColumn.DataPropertyName = "Makanan_Ringan";
-            this.makananRinganDataGridViewTextBoxColumn.HeaderText = "Makanan_Ringan";
-            this.makananRinganDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.makananRinganDataGridViewTextBoxColumn.Name = "makananRinganDataGridViewTextBoxColumn";
-            this.makananRinganDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // snackDataGridViewTextBoxColumn
-            // 
-            this.snackDataGridViewTextBoxColumn.DataPropertyName = "Snack";
-            this.snackDataGridViewTextBoxColumn.HeaderText = "Snack";
-            this.snackDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.snackDataGridViewTextBoxColumn.Name = "snackDataGridViewTextBoxColumn";
-            this.snackDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // daftarmenuuDataSet
-            // 
-            this.daftarmenuuDataSet.DataSetName = "daftarmenuuDataSet";
-            this.daftarmenuuDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // makananBindingSource1
-            // 
-            this.makananBindingSource1.DataMember = "Makanan";
-            this.makananBindingSource1.DataSource = this.daftarmenuuDataSet;
-            // 
             // makananTableAdapter1
             // 
             this.makananTableAdapter1.ClearBeforeFill = true;
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(453, 50);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(144, 23);
+            this.button6.TabIndex = 16;
+            this.button6.Text = "Menu Minuman";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(626, 50);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(144, 23);
+            this.button7.TabIndex = 17;
+            this.button7.Text = "Menu Dessert";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
+            // makananBindingSource2
+            // 
+            this.makananBindingSource2.DataMember = "Makanan";
+            this.makananBindingSource2.DataSource = this.daftarmenuDataSet;
+            // 
+            // textBox4
+            // 
+            this.textBox4.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.makananBindingSource3, "Id_Makanan", true));
+            this.textBox4.Location = new System.Drawing.Point(232, 322);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(163, 22);
+            this.textBox4.TabIndex = 19;
+            this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(84, 327);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(81, 17);
+            this.label4.TabIndex = 18;
+            this.label4.Text = "Id Makanan";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
+            // 
+            // makananBindingSource3
+            // 
+            this.makananBindingSource3.DataMember = "Makanan";
+            this.makananBindingSource3.DataSource = this.daftarmenuDataSet;
+            // 
+            // makananBindingSource4
+            // 
+            this.makananBindingSource4.DataMember = "Makanan";
+            this.makananBindingSource4.DataSource = this.daftarmenuuDataSet;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1129, 450);
+            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.button7);
+            this.Controls.Add(this.button6);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.dataGridView1);
@@ -277,11 +349,14 @@ namespace ExeCRUD
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.makananBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.daftarmenuuDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.daftarmenuDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.makananBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.daftarmenuuDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.makananBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.makananBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.makananBindingSource3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.makananBindingSource4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -313,6 +388,13 @@ namespace ExeCRUD
         private daftarmenuuDataSet daftarmenuuDataSet;
         private System.Windows.Forms.BindingSource makananBindingSource1;
         private daftarmenuuDataSetTableAdapters.MakananTableAdapter makananTableAdapter1;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.BindingSource makananBindingSource2;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.BindingSource makananBindingSource3;
+        private System.Windows.Forms.BindingSource makananBindingSource4;
     }
 }
 

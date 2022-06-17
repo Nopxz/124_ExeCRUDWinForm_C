@@ -54,12 +54,19 @@ namespace ExeCRUD
             this.alkoholDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.daftarmenuDataSet1 = new ExeCRUD.daftarmenuDataSet();
             this.minumanBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.daftarmenuuDataSet = new ExeCRUD.daftarmenuuDataSet();
+            this.minumanBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.minumanTableAdapter1 = new ExeCRUD.daftarmenuuDataSetTableAdapters.MinumanTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.daftarmenuDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.minumanBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.daftarmenuDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.minumanBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.daftarmenuuDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.minumanBindingSource2)).BeginInit();
             this.SuspendLayout();
             // 
             // label5
@@ -83,16 +90,16 @@ namespace ExeCRUD
             this.kopiDataGridViewTextBoxColumn,
             this.alkoholDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.minumanBindingSource1;
-            this.dataGridView1.Location = new System.Drawing.Point(424, 161);
+            this.dataGridView1.Location = new System.Drawing.Point(526, 166);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(364, 201);
+            this.dataGridView1.Size = new System.Drawing.Size(555, 201);
             this.dataGridView1.TabIndex = 23;
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(276, 330);
+            this.button4.Location = new System.Drawing.Point(278, 372);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 23);
             this.button4.TabIndex = 22;
@@ -101,7 +108,7 @@ namespace ExeCRUD
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(177, 330);
+            this.button3.Location = new System.Drawing.Point(177, 372);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 21;
@@ -110,7 +117,7 @@ namespace ExeCRUD
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(177, 372);
+            this.button2.Location = new System.Drawing.Point(177, 415);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 20;
@@ -119,15 +126,16 @@ namespace ExeCRUD
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(78, 330);
+            this.button1.Location = new System.Drawing.Point(78, 372);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 19;
-            this.button1.Text = "Create";
+            this.button1.Text = "Insert";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // textBox3
             // 
+            this.textBox3.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.minumanBindingSource2, "Kopi", true));
             this.textBox3.Location = new System.Drawing.Point(223, 215);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(163, 22);
@@ -135,6 +143,7 @@ namespace ExeCRUD
             // 
             // textBox2
             // 
+            this.textBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.minumanBindingSource2, "Jus", true));
             this.textBox2.Location = new System.Drawing.Point(223, 161);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(163, 22);
@@ -142,6 +151,7 @@ namespace ExeCRUD
             // 
             // textBox1
             // 
+            this.textBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.minumanBindingSource2, "Alkohol", true));
             this.textBox1.Location = new System.Drawing.Point(223, 266);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(163, 22);
@@ -246,12 +256,45 @@ namespace ExeCRUD
             this.minumanBindingSource1.DataMember = "Minuman";
             this.minumanBindingSource1.DataSource = this.daftarmenuDataSet1;
             // 
+            // textBox4
+            // 
+            this.textBox4.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.minumanBindingSource2, "Id_Minuman", true));
+            this.textBox4.Location = new System.Drawing.Point(223, 313);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(163, 22);
+            this.textBox4.TabIndex = 27;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(75, 313);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(80, 17);
+            this.label4.TabIndex = 26;
+            this.label4.Text = "Id Minuman";
+            // 
+            // daftarmenuuDataSet
+            // 
+            this.daftarmenuuDataSet.DataSetName = "daftarmenuuDataSet";
+            this.daftarmenuuDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // minumanBindingSource2
+            // 
+            this.minumanBindingSource2.DataMember = "Minuman";
+            this.minumanBindingSource2.DataSource = this.daftarmenuuDataSet;
+            // 
+            // minumanTableAdapter1
+            // 
+            this.minumanTableAdapter1.ClearBeforeFill = true;
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1137, 450);
+            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.dataGridView1);
@@ -274,6 +317,8 @@ namespace ExeCRUD
             ((System.ComponentModel.ISupportInitialize)(this.minumanBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.daftarmenuDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.minumanBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.daftarmenuuDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.minumanBindingSource2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -304,5 +349,10 @@ namespace ExeCRUD
         private System.Windows.Forms.DataGridViewTextBoxColumn alkoholDataGridViewTextBoxColumn;
         private daftarmenuDataSet daftarmenuDataSet1;
         private System.Windows.Forms.BindingSource minumanBindingSource1;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Label label4;
+        private daftarmenuuDataSet daftarmenuuDataSet;
+        private System.Windows.Forms.BindingSource minumanBindingSource2;
+        private daftarmenuuDataSetTableAdapters.MinumanTableAdapter minumanTableAdapter1;
     }
 }

@@ -84,12 +84,19 @@ namespace ExeCRUD
 
         private void Form3_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'daftarmenuuDataSet.Dessert' table. You can move, or remove it, as needed.
+            this.dessertTableAdapter1.Fill(this.daftarmenuuDataSet.Dessert);
             // TODO: This line of code loads data into the 'daftarmenuDataSet1.Dessert' table. You can move, or remove it, as needed.
             this.dessertTableAdapter.Fill(this.daftarmenuDataSet1.Dessert);
             // TODO: This line of code loads data into the 'daftarmenuDataSet.Dessert' table. You can move, or remove it, as needed.
             this.dessertTableAdapter.Fill(this.daftarmenuDataSet.Dessert);
             // TODO: This line of code loads data into the 'daftarmenuDataSet.Minuman' table. You can move, or remove it, as needed.
             this.minumanTableAdapter.Fill(this.daftarmenuDataSet.Minuman);
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
 
         }
     }
